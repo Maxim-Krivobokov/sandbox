@@ -1,0 +1,30 @@
+pipeline {
+    agent { label 'ubuntu16' }
+
+    stages {
+        stage('Build') {
+            steps {
+                step { echo 'Building..' }
+                
+                step { 
+                    sh 'cmake /cpp/example1/ '
+                    }
+                step { sh 'make'
+                    }
+
+                step { sh './main'
+                }
+            }
+        }
+        stage('constructing a package') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
