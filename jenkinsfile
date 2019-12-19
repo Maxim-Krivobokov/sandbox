@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Building..' 
                 
-                sh 'cmake /cpp/example1/ '
+                sh 'cmake cpp/example1/ '
                     
                 sh 'make'
               
