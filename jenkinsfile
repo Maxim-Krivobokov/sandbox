@@ -28,7 +28,7 @@ pipeline {
                 sh 'mkdir package_folder/usr/bin'
                 sh 'mv control package_folder/DEBIAN/control'
                 sh 'fakeroot dpkg-deb --build package_folder'
-                sh 'lintian package_folder.deb'
+                //sh 'lintian package_folder.deb'
             }
         }
         stage('cleanup') {
