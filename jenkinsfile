@@ -22,7 +22,22 @@ pipeline {
         }
         stage('constructing a package') {
             steps {
-                echo 'Testing..'
+                sh 'mkdir package_folder'
+                sh 'mkdir package_folder/DEBIAN'
+                sh 'mkdir package_folder/usr'
+                sh 'mkdir package_folder/usr/bin'
+                sh 'mkdir package_folder/DEBIAN/control'
+                sh 'cat >> ./package_folder/DEBIAN/control << EOF
+                Package: test-main
+                Vesion: 1.0-1
+                Section: misc
+                Architecture: all
+                Depends: bash
+                Maintainer: Max max@mail.com
+                Decription: test package
+                    EOF'
+                sh 'fakeroot dpkg-deb --build package_folder'
+                sh 'lintian package_folder.deb'
             }
         }
         stage('Deploy') {
