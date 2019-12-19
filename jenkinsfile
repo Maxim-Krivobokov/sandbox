@@ -26,8 +26,7 @@ pipeline {
                 sh 'mkdir package_folder/DEBIAN'
                 sh 'mkdir package_folder/usr'
                 sh 'mkdir package_folder/usr/bin'
-                sh 'touch package_folder/DEBIAN/control'
-                sh 'cat >> ./package_folder/DEBIAN/control << EOF\n Package: test-main \n Vesion: 1.0-1\n Section: misc\n Architecture: all\n Depends: bash\n Maintainer: Max max@mail.com\n Decription: test package  EOF'
+                sh 'mv control package_folder/DEBIAN/control'
                 sh 'fakeroot dpkg-deb --build package_folder'
                 sh 'lintian package_folder.deb'
             }
