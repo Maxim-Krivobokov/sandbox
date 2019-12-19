@@ -31,9 +31,11 @@ pipeline {
                 sh 'lintian package_folder.deb'
             }
         }
-        stage('Deploy') {
+        stage('cleanup') {
             steps {
-                echo 'Deploying....'
+                echo 'temporary way to make idempotency'
+                sh 'rm -rf package_folder/'
+                sh 'rmdir package_folder'
             }
         }
     }
