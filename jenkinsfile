@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo 'temporary way to make idempotency'
                 sh 'rm -rf package_folder/'
-                sh 'rmdir package_folder'
+                //sh 'rmdir package_folder'
             }
         }
     }
