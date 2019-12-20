@@ -1,0 +1,11 @@
+Package: simple-cpp-app
+Version: 1.0-2
+Provides: main-hello
+Maintainer: Name Surname email@mail.gov
+Architecture: all
+Section: misc
+Decription: simple app for tests
+ can only print hello world.
+ thats' all
+Depends: dpkg (>= 1.0)
+Build-Depends: cmake
