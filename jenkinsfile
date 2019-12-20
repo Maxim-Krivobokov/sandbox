@@ -34,7 +34,7 @@ pipeline {
         stage('report') {
             steps {
                 echo 'making a report'
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/tmp', reportFiles: 'index.html', reportName: 'ready HTML Report', reportTitles: ''])
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'first', reportFiles: 'index.html', reportName: 'ready HTML Report', reportTitles: ''])
                 //sh 'lintian package_folder.deb'
             }
         }
