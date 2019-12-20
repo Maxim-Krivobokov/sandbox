@@ -37,6 +37,7 @@ pipeline {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/tmp', reportFiles: 'index.html', reportName: 'ready HTML Report', reportTitles: ''])
                 //sh 'lintian package_folder.deb'
             }
+        }
         stage('cleanup') {
             steps {
                 echo 'temporary way to make idempotency'
