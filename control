@@ -1,8 +1,0 @@
-Package: test-main
-Version: 1.0-1
-Section: misc
-Architecture: all
-Depends: bash
-Maintainer: max max@mail.com
-Description: test cpp-compiled package
-
